@@ -1,7 +1,9 @@
-function App() {
+import HelloWorld from './HelloWorld.js'
+
+const App = () => {
   return (
-    <p>Hello World!</p>
+    <HelloWorld />
   );
 }
 
-export default App;
+export default App
