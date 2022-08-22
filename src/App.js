@@ -1,8 +1,7 @@
-import HelloWorld from './HelloWorld.js'
 
 const App = () => {
   return (
-    <HelloWorld />
+    <p>Hello World!</p>
   );
 }
 
