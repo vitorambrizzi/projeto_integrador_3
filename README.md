@@ -1,10 +1,6 @@
-# Frontend React PJ3
+# Projeto Integrador III
+Exercises related to agile development methodologies, with the development of a Front-End project view using React.<br>
 
-**Autor:** Vítor Ambrizzi
-
-**Instituição:** IFSP Caraguatatuba
-**Turma:** 2022.2
-
-#### Contato
-
-[Github](https://github.com/vitorambrizzi)
+**Author:** Vítor Ambrizzi<br>
+**Institution:** IFSP Câmpus Caraguatatuba<br>
+**Semester:** 2022-2<br>
