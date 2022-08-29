@@ -1,4 +1,15 @@
-.header-nav {
+#Header {
     background-color: #000000;
     height: 50px;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+}
+
+#Header .container {
+    width: 800px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
