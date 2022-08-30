@@ -1,9 +1,9 @@
-import './Footer.css'
+import "./Footer.css";
 
 const Footer = () => {
   return (
     <footer className='main-footer'>
-        <p>© @vitorambrizzi__</p>
+        <p>© 2022 Vítor Ambrizzi</p>
     </footer>
   )
 }

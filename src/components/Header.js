@@ -1,6 +1,13 @@
+import "./Header.css";
+
 const Header = () => {
   return (
-    <div>Header</div>
+    <header id='Header'>
+      <div className='container'>
+        <div>Logo</div>
+        <div>Menu</div>
+      </div>
+    </header>
   )
 }
 
