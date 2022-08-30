@@ -1,5 +1,5 @@
 # Projeto Integrador III
-Exercises related to agile development methodologies, with the development of a Front-End project view using React.<br>
+Subject destined to study React and its technologies, developing a Front-End project view as we cover React concepts.<br>
 
 **Author:** Vítor Ambrizzi<br>
 **Institution:** IFSP Câmpus Caraguatatuba<br>
