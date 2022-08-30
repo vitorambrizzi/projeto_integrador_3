@@ -1,9 +1,9 @@
-.main-container {
+#main-container {
     background-color: #ffffff;
     padding: 20px 0;
 }
 
-.main-container .container {
+#main-container .container {
     background-color: #ffffff;
     margin: 0 auto;
     width: 800px;

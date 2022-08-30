@@ -1,6 +1,6 @@
-.main-footer {
-    height: 300px;
+#Footer {
     background: #c8c8c8;
+    height: 300px;
     display: flex;
     justify-content: center;
     align-items: center;

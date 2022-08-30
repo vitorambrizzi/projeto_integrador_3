@@ -2,7 +2,7 @@ import "./Footer.css";
 
 const Footer = () => {
   return (
-    <footer className='main-footer'>
+    <footer id='Footer'>
         <p>© 2022 Vítor Ambrizzi</p>
     </footer>
   )
