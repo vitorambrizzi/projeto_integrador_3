@@ -12,3 +12,40 @@
     justify-content: space-between;
     align-items: center;
 }
+
+#Header .logotype {
+    display: flex;
+    align-items: center;
+}
+
+#Header .logotype h1 {
+    color: #ffffff;
+    font-size: 1rem;
+    margin: 0 0 0 10px;
+}
+
+#Header .icon-logo {
+    width: 30px;
+    height: 30px;
+}
+
+#Header .container nav ul {
+    display: flex;
+    list-style-type: none;
+}
+
+#Header .container nav ul li{
+    margin: 0 0 0 20px;
+}
+
+#Header .container nav ul li a {
+    color: #ffffff;
+}
+
+#Header .container nav ul li a:hover {
+    color: #fd4f04;
+}
+
+#Header .container nav ul li a.active {
+    color: #fd8d5c;
+}

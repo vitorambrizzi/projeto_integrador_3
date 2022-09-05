@@ -1,11 +1,23 @@
+import {RiNeteaseCloudMusicFill as Music} from 'react-icons/ri';
+import { NavLink, Link } from 'react-router-dom';
 import "./Header.css";
 
 const Header = () => {
   return (
     <header id='Header'>
       <div className='container'>
-        <div>Logo</div>
-        <div>Menu</div>
+        <Link to='/'>
+          <div className='logotype'>
+            <Music className='icon-logo'/>
+            <h1>Social Music</h1>
+          </div>
+        </Link>
+        <nav>
+          <ul>
+            <li><NavLink to='/'>Home</NavLink></li>
+            <li><NavLink to='/contact'>Contact</NavLink></li>
+          </ul>
+        </nav>
       </div>
     </header>
   )
