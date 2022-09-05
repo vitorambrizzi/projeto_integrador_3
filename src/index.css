@@ -19,3 +19,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background: #c8c8c8;
 }
+
+a {
+  color: #fc763d;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #c13a00;
+}
