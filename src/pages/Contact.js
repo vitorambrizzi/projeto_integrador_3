@@ -1,13 +1,19 @@
 import {Link} from "react-router-dom";
-import {useState} from "react";
+import {useState, useEffect} from "react";
 import Header from "../components/Header.js";
 import MainContainer from "../components/MainContainer.js";
 import Footer from "../components/Footer.js";
 import "./Contact.css";
 
 const Contact = () => {
+  // useState example
   const [nameUser, setNameUser] = useState("Vítor")
   const [count, setCount] = useState(0)
+
+  // useEffect example
+  useEffect( () => {
+    console.log(count)
+  }, [count])
 
   return (
     <>
