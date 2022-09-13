@@ -1,10 +1,10 @@
 import {RiNeteaseCloudMusicFill as Music} from 'react-icons/ri';
-import { NavLink, Link } from 'react-router-dom';
-import "./Header.css";
+import {NavLink, Link} from 'react-router-dom';
+import './Header.css';
 
 const Header = () => {
   return (
-    <header id='Header'>
+    <header className='Header'>
       <div className='container'>
         <Link to='/'>
           <div className='logotype'>

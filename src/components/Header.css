@@ -1,11 +1,11 @@
-#Header {
+.Header {
     background-color: #000000;
     color: #ffffff;
     height: 50px;
     display: flex;
 }
 
-#Header .container {
+.Header .container {
     width: 800px;
     margin: 0 auto;
     display: flex;
@@ -13,39 +13,46 @@
     align-items: center;
 }
 
-#Header .logotype {
+.Header .logotype {
     display: flex;
     align-items: center;
 }
 
-#Header .logotype h1 {
-    color: #ffffff;
+.Header .logotype h1 {
     font-size: 1rem;
     margin: 0 0 0 10px;
 }
 
-#Header .icon-logo {
+.Header a .logotype {
+    color: #fd8d5c;
+}
+
+.Header a .logotype:hover {
+    color: #fd4f04;
+}
+
+.Header .icon-logo {
     width: 30px;
     height: 30px;
 }
 
-#Header .container nav ul {
+.Header .container nav ul {
     display: flex;
     list-style-type: none;
 }
 
-#Header .container nav ul li{
+.Header .container nav ul li{
     margin: 0 0 0 20px;
 }
 
-#Header .container nav ul li a {
+.Header .container nav ul li a {
     color: #ffffff;
 }
 
-#Header .container nav ul li a:hover {
+.Header .container nav ul li a:hover {
     color: #fd4f04;
 }
 
-#Header .container nav ul li a.active {
+.Header .container nav ul li a.active {
     color: #fd8d5c;
 }
