@@ -1,3 +1,4 @@
+import {useEffect, useState} from "react";
 import {Link} from "react-router-dom";
 import Header from "../components/Header.js";
 import MainContainer from "../components/MainContainer.js";
@@ -6,6 +7,18 @@ import Footer from "../components/Footer.js";
 import "./Home.css";
 
 const Home = () => {
+  const [users, setUsers] = useState([])
+
+  const requestUsers = async () => {
+    const response = await fetch('https://api.github.com/users')
+    const data = await response.json()
+    setUsers(data)
+  }
+
+  useEffect( () => {
+    requestUsers()
+  }, [])
+
   return (
     <>
       <Header />
