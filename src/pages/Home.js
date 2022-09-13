@@ -1,6 +1,7 @@
 import {Link} from "react-router-dom";
 import Header from "../components/Header.js";
 import MainContainer from "../components/MainContainer.js";
+import CardComment from "../components/CardComment.js";
 import Footer from "../components/Footer.js";
 import "./Home.css";
 
@@ -16,7 +17,18 @@ const Home = () => {
           desenvolvedores profissionais, ficando atrás somente do Node.js e Angular, 
           respectivamente[9].
         </p>
-        <Link to='/contact'>Contact</Link>
+
+        <CardComment initial='R' name='Renan'>
+          Na pesquisa de 2018 sobre hábitos de desenvolvedores do site Stack Overflow, o React foi a terceira
+        </CardComment>
+        <CardComment initial='V' name='Vítor'>
+          Profissionais, ficando atrás somente do Node.js e Angular
+        </CardComment>
+        <CardComment initial='C' name='Carmo'>
+          Fiquei amigo do React!
+        </CardComment>
+
+        <Link to='/contact'>Contact</Link><br />
       </MainContainer>
       <Footer />
     </>

@@ -1,18 +1,21 @@
-const CardComment = () => {
-  return (
-    <div>
-        <div></div>
-        <div>
-            <h1></h1>
-            <p></p>
+const CardComment = ({initial, name, children}) => {
+
+    const {avatar, box, card, text, userName} = style
+
+    return (
+        <div style={card}>
+            <div style={avatar}>{initial}</div>
+            <div style={box}>
+                <h1 style={userName}>{name}</h1>
+                <p style={text}>{children}</p>
+            </div>
         </div>
-    </div>
-  )
+    )
 }
 
 const style = {
     avatar: {
-        background: '#CCC',
+        background: '#CCCCCC',
         borderRadius: '50%',
         height: '50px',
         width: '50px',
@@ -21,26 +24,27 @@ const style = {
         alignItems: 'center',
         margin: '0 10px 0 0'
     },
+    
+    box: {
+        width: '235px'
+    },
 
     card: {
         width: '300px',
-        background: '#EEE',
+        background: '#EEEEEE',
         display: 'flex',
         padding: '10px',
         borderRadius: '10px',
         margin: '15px'
     },
 
-    userName: {
-
-    },
-
     text: {
-
+        margin: 0
     },
 
-    box: {
-
+    userName: {
+        margin: 0,
+        fontSize: '1rem'
     }
 }
 
