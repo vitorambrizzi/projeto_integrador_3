@@ -1,4 +1,3 @@
-import {Link} from "react-router-dom";
 import {useState, useEffect} from "react";
 import Header from "../components/Header.js";
 import MainContainer from "../components/MainContainer.js";
@@ -27,7 +26,6 @@ const Contact = () => {
         <h1>My number is: {count}.</h1>
         <button onClick={() => setCount(count + 1)}>Plus 1</button>
         <br/><br/>
-        <Link to='/'>Home</Link>
       </MainContainer>
       <Footer />
     </>
