@@ -9,9 +9,10 @@ const Home = () => {
   const [users, setUsers] = useState([])
 
   const requestUsers = async () => {
-    const response = await fetch('https://api.github.com/users')
-    const data = await response.json()
-    setUsers(data)
+    const response = await fetch('http://localhost/vitor_ambrizzi/2022-2/linguagem_de_programacao_2-LP2I3/user/list')
+    const result = await response.json()
+    console.log(result.success.message)
+    setUsers(result.data)
   }
 
   useEffect( () => {
@@ -24,15 +25,16 @@ const Home = () => {
       <MainContainer>
         <h1>Home</h1>
 
-        <p>Lista de usuários API GitHub:</p>
+        <p>API User list:</p>
         {  
-          users.length === 0 ?
-            <p>Nenhum usuário!</p>
+          users.length === 0
+          ?
+            <p>No users!</p>
           :
             users.map((user) => {
               return (
-                <CardComment key={user.id} avatarUrl={user.avatar_url} name={user.login}>
-                  {user.html_url}
+                <CardComment key={user.id} avatarUrl={user.avatar} name={user.name}>
+                  {user.email}
                 </CardComment>
               )
             })
