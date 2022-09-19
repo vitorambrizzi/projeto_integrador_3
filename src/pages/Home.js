@@ -1,5 +1,4 @@
 import {useEffect, useState} from "react";
-import {Link} from "react-router-dom";
 import Header from "../components/Header.js";
 import MainContainer from "../components/MainContainer.js";
 import CardComment from "../components/CardComment.js";
@@ -24,24 +23,20 @@ const Home = () => {
       <Header />
       <MainContainer>
         <h1>Home</h1>
-        <p>
-          Na pesquisa de 2018 sobre hábitos de desenvolvedores do site Stack Overflow, 
-          o React foi a terceira biblioteca ou framework[8] mais citado pelos usuários e 
-          desenvolvedores profissionais, ficando atrás somente do Node.js e Angular, 
-          respectivamente[9].
-        </p>
 
-        <CardComment initial='R' name='Renan'>
-          Na pesquisa de 2018 sobre hábitos de desenvolvedores do site Stack Overflow, o React foi a terceira
-        </CardComment>
-        <CardComment initial='V' name='Vítor'>
-          Profissionais, ficando atrás somente do Node.js e Angular
-        </CardComment>
-        <CardComment initial='C' name='Carmo'>
-          Fiquei amigo do React!
-        </CardComment>
-
-        <Link to='/contact'>Contact</Link><br />
+        <p>Lista de usuários API GitHub:</p>
+        {  
+          users.length === 0 ?
+            <p>Nenhum usuário!</p>
+          :
+            users.map((user) => {
+              return (
+                <CardComment key={user.id} avatarUrl={user.avatar_url} name={user.login}>
+                  {user.html_url}
+                </CardComment>
+              )
+            })
+        }
       </MainContainer>
       <Footer />
     </>
