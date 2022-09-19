@@ -25,11 +25,14 @@
 }
 
 .Header a .logotype {
-    color: #FFF;
+    color: #fd8d5c;
+}
+
+.Header a .logotype:hover {
+    color: #fd4f04;
 }
 
 .Header .icon-logo {
-    color: #ffffff;
     width: 30px;
     height: 30px;
 }
