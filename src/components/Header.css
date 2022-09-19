@@ -1,8 +1,9 @@
 .Header {
-    background-color: #000000;
-    color: #ffffff;
+    background: #000;
     height: 50px;
+    color: #FFF;
     display: flex;
+    justify-content: space-between;
 }
 
 .Header .container {
@@ -24,35 +25,33 @@
 }
 
 .Header a .logotype {
-    color: #fd8d5c;
-}
-
-.Header a .logotype:hover {
-    color: #fd4f04;
+    color: #FFF;
 }
 
 .Header .icon-logo {
+    color: #ffffff;
     width: 30px;
     height: 30px;
 }
 
 .Header .container nav ul {
     display: flex;
-    list-style-type: none;
 }
 
-.Header .container nav ul li{
+.Header .container nav ul li {
+    list-style-type: none;
     margin: 0 0 0 20px;
 }
 
 .Header .container nav ul li a {
-    color: #ffffff;
+    color: #FFF;
+    text-decoration: none;
 }
 
 .Header .container nav ul li a:hover {
-    color: #fd4f04;
+    color: #fd4f04
 }
 
 .Header .container nav ul li a.active {
-    color: #fd8d5c;
+    color: #fd8d5c
 }
