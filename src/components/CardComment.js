@@ -1,15 +1,23 @@
-const CardComment = ({avatarUrl, name, children}) => {
+import {Link} from 'react-router-dom'
+
+const CardComment = ({avatarUrl, name, children, id}) => {
 
     const {avatar, box, card, text, userName} = style
 
     return (
-        <div style={card}>
-            <img src={avatarUrl} style={avatar} alt={'Foto do ' + name}/>
-            <div style={box}>
-                <h1 style={userName}>{name}</h1>
-                <p style={text}>{children}</p>
+//      <Link to={'/user/' + id}>
+        <Link to={`/user/${id}`}>
+            <div style={card}>
+{
+//              <img src={avatarUrl} style={avatar} alt={'Foto do ' + name}/>
+}
+                <img src={avatarUrl} style={avatar} alt={`Foto do ${name}`}/>
+                <div style={box}>
+                    <h1 style={userName}>{name}</h1>
+                    <p style={text}>{children}</p>
+                </div>
             </div>
-        </div>
+        </Link>
     )
 }
 
