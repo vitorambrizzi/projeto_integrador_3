@@ -11,7 +11,7 @@ const CardComment = ({avatarUrl, name, children, id}) => {
 {
 //              <img src={avatarUrl} style={avatar} alt={'Picture of ' + name}/>
 }
-                <img src={avatarUrl} style={avatar} alt={`Picture of ${name}`}/>
+                <img src={avatarUrl} style={avatar} alt={name}/>
                 <div style={box}>
                     <h1 style={userName}>{name}</h1>
                     <p style={text}>{children}</p>

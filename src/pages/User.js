@@ -21,6 +21,7 @@ const User = () => {
 
     useEffect(() => {
         requestUserById(id)
+    // eslint-disable-next-line
     }, [])
 
     return(
@@ -31,7 +32,7 @@ const User = () => {
                     user?.name ?
                         <>
                             <h1>{user.name}</h1>
-                            <img src={user.avatar} alt={`Picture of ${user.name}`}/>
+                            <img src={user.avatar} alt={user.name}/>
                             <p>Email: {user.email}</p>
                         </>
                     :
