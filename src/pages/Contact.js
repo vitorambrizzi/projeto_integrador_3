@@ -1,8 +1,8 @@
-import {useState, useEffect} from "react";
-import Header from "../components/Header.js";
-import MainContainer from "../components/MainContainer.js";
-import Footer from "../components/Footer.js";
-import "./Contact.css";
+import {useState, useEffect} from 'react'
+import Header from '../components/Header.js'
+import MainContainer from '../components/MainContainer.js'
+import Footer from '../components/Footer.js'
+import './Contact.css'
 
 const Contact = () => {
   // useState example

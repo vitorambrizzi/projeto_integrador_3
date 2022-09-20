@@ -1,9 +1,9 @@
-import {useEffect, useState} from "react";
-import Header from "../components/Header.js";
-import MainContainer from "../components/MainContainer.js";
-import CardComment from "../components/CardComment.js";
-import Footer from "../components/Footer.js";
-import "./Home.css";
+import {useState, useEffect} from 'react'
+import Header from '../components/Header.js'
+import MainContainer from '../components/MainContainer.js'
+import CardComment from '../components/CardComment.js'
+import Footer from '../components/Footer.js'
+import './Home.css'
 
 const Home = () => {
   const [users, setUsers] = useState([])

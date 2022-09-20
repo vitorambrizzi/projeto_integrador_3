@@ -1,5 +1,5 @@
-import {RiNeteaseCloudMusicFill as Music} from 'react-icons/ri';
-import {NavLink, Link} from 'react-router-dom';
+import {RiNeteaseCloudMusicFill as Music} from 'react-icons/ri'
+import {Link, NavLink} from 'react-router-dom'
 import './Header.css';
 
 const Header = () => {

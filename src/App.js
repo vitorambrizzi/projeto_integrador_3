@@ -1,9 +1,9 @@
-import {Routes, Route} from "react-router-dom";
-import Home from "./pages/Home.js";
-import Contact from "./pages/Contact.js";
-import SignUp from "./pages/SignUp.js";
-import User from "./pages/User.js";
-import NotFound from "./pages/NotFound.js";
+import {Routes, Route} from 'react-router-dom'
+import Home from './pages/Home.js'
+import Contact from './pages/Contact.js'
+import SignUp from './pages/SignUp.js'
+import User from './pages/User.js'
+import NotFound from './pages/NotFound.js'
 
 const App = () => {
   return (
@@ -14,7 +14,7 @@ const App = () => {
       <Route path='/user/:id' element={<User />} />
       <Route path='*' element={<NotFound />} />
     </Routes>
-  );
+  )
 }
 
 export default App;
