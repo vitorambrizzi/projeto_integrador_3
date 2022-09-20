@@ -9,9 +9,9 @@ const CardComment = ({avatarUrl, name, children, id}) => {
         <Link to={`/user/${id}`}>
             <div style={card}>
 {
-//              <img src={avatarUrl} style={avatar} alt={'Foto do ' + name}/>
+//              <img src={avatarUrl} style={avatar} alt={'Picture of ' + name}/>
 }
-                <img src={avatarUrl} style={avatar} alt={`Foto do ${name}`}/>
+                <img src={avatarUrl} style={avatar} alt={`Picture of ${name}`}/>
                 <div style={box}>
                     <h1 style={userName}>{name}</h1>
                     <p style={text}>{children}</p>
