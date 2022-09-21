@@ -33,7 +33,7 @@ const Home = () => {
           :
             users.map((user) => {
               return (
-                <CardComment key={user.id} avatarUrl={user.avatar} name={user.name} id={user.id}>
+                <CardComment users={users} setUsers={setUsers} key={user.id} avatarUrl={user.avatar} name={user.name} id={user.id}>
                   {user.email}
                 </CardComment>
               )

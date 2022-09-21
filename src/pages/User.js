@@ -7,7 +7,7 @@ import Footer from '../components/Footer.js'
 const User = () => {
     const {id} = useParams()
     const navigate = useNavigate()
-    const [user, setUser] = useState({})
+    const [user, setUser] = useState(null)
 
     const requestUserById = async (id) => {
         const response = await fetch(`http://localhost/vitor_ambrizzi/2022-2/linguagem_de_programacao_2-LP2I3/user/by-id?id=${id}`)

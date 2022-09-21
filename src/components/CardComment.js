@@ -1,23 +1,40 @@
+import {TbTrash as IconTrash} from 'react-icons/tb'
 import {Link} from 'react-router-dom'
 
-const CardComment = ({avatarUrl, name, children, id}) => {
+const CardComment = ({avatarUrl, name, children, id, users, setUsers}) => {
 
-    const {avatar, box, card, text, userName} = style
+    const {card, avatar, box, userName, text, buttonLink} = style
+
+    const deleteUser = async (id) => {
+//      const formData = new FormData()
+//      formData.append('id', id)
+        const response = await fetch('http://localhost/vitor_ambrizzi/2022-2/linguagem_de_programacao_2-LP2I3/user/delete', {
+            method: 'DELETE',
+            body: JSON.stringify({id: id})
+        })
+        const result = await response.json()
+
+        if (result?.success) {
+            const usersFiltered = users.filter((user) => {return user.id !== id})
+            setUsers(usersFiltered)
+        } else {
+            console.error(result?.error)
+        }
+    }
 
     return (
-//      <Link to={'/user/' + id}>
-        <Link to={`/user/${id}`}>
-            <div style={card}>
-{
-//              <img src={avatarUrl} style={avatar} alt={'Picture of ' + name}/>
-}
+        <div style={card}>
+            <Link to={`/user/${id}`}>
                 <img src={avatarUrl} style={avatar} alt={name}/>
-                <div style={box}>
+            </Link>
+            <div style={box}>
+                <Link to={`/user/${id}`}>
                     <h1 style={userName}>{name}</h1>
                     <p style={text}>{children}</p>
-                </div>
+                </Link>
+                <IconTrash style={buttonLink} onClick={() => {deleteUser(id)}}/>
             </div>
-        </Link>
+        </div>
     )
 }
 
@@ -33,10 +50,6 @@ const style = {
         margin: '0 10px 0 0'
     },
     
-    box: {
-        width: '235px'
-    },
-
     card: {
         width: '300px',
         background: '#EEEEEE',
@@ -46,13 +59,25 @@ const style = {
         margin: '15px'
     },
 
-    text: {
-        margin: 0
-    },
-
     userName: {
         margin: 0,
-        fontSize: '1rem'
+        fontSize: '0.9rem',
+        color: '#000000'
+    },
+
+    text: {
+        margin: '0 0 10px 0',
+        color: '#333333'
+    },
+
+    box: {
+        width: '235px'
+    },
+
+    buttonLink: {
+        cursor: 'pointer',
+        padding: '5px',
+        borderRadius: '5px'
     }
 }
 
