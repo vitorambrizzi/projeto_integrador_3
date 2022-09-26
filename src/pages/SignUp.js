@@ -1,8 +1,11 @@
+import {useNavigate} from 'react-router-dom'
 import Header from '../components/Header.js'
 import MainContainer from '../components/MainContainer.js'
 import Footer from '../components/Footer.js'
 
 const SignUp = () => {
+    const navigate = useNavigate()
+
     const createUser = async (user) => {
         const formUser = new FormData()
         formUser.append('name', user.name)
@@ -15,9 +18,9 @@ const SignUp = () => {
             body: formUser
         })
         const result = await response.json()
-
-        console.log(result.success.message)
-        console.log(result.user)
+        if (result?.success) {
+            navigate('/')
+        }
     }
 
     const handleSubmit = (event) => {
