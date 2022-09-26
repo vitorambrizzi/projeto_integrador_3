@@ -1,7 +1,7 @@
 import {Link} from 'react-router-dom'
-import Header from '../components/Header.js'
-import MainContainer from '../components/MainContainer.js'
-import Footer from '../components/Footer.js'
+import Header from '../components/Header'
+import MainContainer from '../components/MainContainer'
+import Footer from '../components/Footer'
 
 const NotFound = () => {
   return (

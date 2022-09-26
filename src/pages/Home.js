@@ -1,9 +1,8 @@
 import {useState, useEffect} from 'react'
-import Header from '../components/Header.js'
-import MainContainer from '../components/MainContainer.js'
-import CardUser from '../components/CardUser.js'
-import Footer from '../components/Footer.js'
-import './Home.css'
+import Header from '../components/Header'
+import MainContainer from '../components/MainContainer'
+import CardUser from '../components/CardUser'
+import Footer from '../components/Footer'
 
 const Home = () => {
   const [users, setUsers] = useState([])

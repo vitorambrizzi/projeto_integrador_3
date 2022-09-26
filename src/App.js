@@ -1,9 +1,9 @@
 import {Routes, Route} from 'react-router-dom'
-import Home from './pages/Home.js'
-import Contact from './pages/Contact.js'
-import SignUp from './pages/SignUp.js'
-import User from './pages/User.js'
-import NotFound from './pages/NotFound.js'
+import Home from './pages/Home'
+import Contact from './pages/Contact'
+import SignUp from './pages/SignUp'
+import User from './pages/User'
+import NotFound from './pages/NotFound'
 
 const App = () => {
   return (
@@ -17,4 +17,4 @@ const App = () => {
   )
 }
 
-export default App;
+export default App

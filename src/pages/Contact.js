@@ -1,8 +1,7 @@
 import {useState, useEffect} from 'react'
-import Header from '../components/Header.js'
-import MainContainer from '../components/MainContainer.js'
-import Footer from '../components/Footer.js'
-import './Contact.css'
+import Header from '../components/Header'
+import MainContainer from '../components/MainContainer'
+import Footer from '../components/Footer'
 
 const Contact = () => {
   // useState example
