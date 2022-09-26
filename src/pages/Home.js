@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react'
 import Header from '../components/Header.js'
 import MainContainer from '../components/MainContainer.js'
-import CardComment from '../components/CardComment.js'
+import CardUser from '../components/CardUser.js'
 import Footer from '../components/Footer.js'
 import './Home.css'
 
@@ -33,9 +33,9 @@ const Home = () => {
           :
             users.map((user) => {
               return (
-                <CardComment users={users} setUsers={setUsers} key={user.id} avatarUrl={user.avatar} name={user.name} id={user.id}>
+                <CardUser users={users} setUsers={setUsers} key={user.id} avatarUrl={user.avatar} name={user.name} id={user.id}>
                   {user.email}
-                </CardComment>
+                </CardUser>
               )
             })
         }

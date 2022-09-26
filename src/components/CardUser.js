@@ -1,7 +1,7 @@
 import {TbTrash as IconTrash} from 'react-icons/tb'
 import {Link} from 'react-router-dom'
 
-const CardComment = ({avatarUrl, name, children, id, users, setUsers}) => {
+const CardUser = ({avatarUrl, name, children, id, users, setUsers}) => {
 
     const {card, avatar, box, userName, text, buttonLink} = style
 
@@ -81,4 +81,4 @@ const style = {
     }
 }
 
-export default CardComment
+export default CardUser
