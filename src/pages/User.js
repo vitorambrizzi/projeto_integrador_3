@@ -1,5 +1,5 @@
 import {useParams, useNavigate} from 'react-router-dom'
-import {useEffect, useState} from 'react'
+import {useState, useEffect} from 'react'
 import {API_PATH} from '../config'
 import Header from '../components/Header'
 import MainContainer from '../components/MainContainer'
@@ -7,8 +7,8 @@ import Footer from '../components/Footer'
 
 const User = () => {
     const {id} = useParams()
-    const navigate = useNavigate()
     const [user, setUser] = useState(null)
+    const navigate = useNavigate()
 
     const requestUserById = async (id) => {
         const response = await fetch(`${API_PATH}user/by-id?id=${id}`)
@@ -20,10 +20,9 @@ const User = () => {
         setUser(result.data)
     }
 
-    useEffect(() => {
-        requestUserById(id)
+    useEffect(() => {requestUserById(id)},
     // eslint-disable-next-line
-    }, [])
+    [])
 
     return(
         <>
@@ -36,8 +35,7 @@ const User = () => {
                             <img src={user.avatar} alt={user.name} />
                             <p>Email: {user.email}</p>
                         </>
-                    :
-                        <p>Loading user...</p>
+                    : <p>Loading user...</p>
                 }
             </MainContainer>
             <Footer />
