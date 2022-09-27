@@ -1,4 +1,5 @@
 import {useState, useEffect} from 'react'
+import {API_PATH} from '../config'
 import Header from '../components/Header'
 import MainContainer from '../components/MainContainer'
 import CardUser from '../components/CardUser'
@@ -8,7 +9,7 @@ const Home = () => {
   const [users, setUsers] = useState([])
 
   const requestUsers = async () => {
-    const response = await fetch('http://localhost/vitor_ambrizzi/2022-2/linguagem_de_programacao_2-LP2I3/user/list')
+    const response = await fetch(`${API_PATH}user/list`)
     const result = await response.json()
     console.log(result.success.message)
     setUsers(result.data)

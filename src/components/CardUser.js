@@ -1,14 +1,15 @@
 import {TbTrash as IconTrash} from 'react-icons/tb'
 import {Link} from 'react-router-dom'
+import {API_PATH} from '../config'
 
 const CardUser = ({avatarUrl, name, children, id, users, setUsers}) => {
 
     const {card, avatar, box, userName, text, buttonLink} = style
 
     const deleteUser = async (id) => {
-//      const formData = new FormData()
-//      formData.append('id', id)
-        const response = await fetch('http://localhost/vitor_ambrizzi/2022-2/linguagem_de_programacao_2-LP2I3/user/delete', {
+        //const formData = new FormData()
+        //formData.append('id', id)
+        const response = await fetch(`${API_PATH}user/delete`, {
             method: 'DELETE',
             body: JSON.stringify({id: id})
         })

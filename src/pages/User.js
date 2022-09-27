@@ -1,5 +1,6 @@
 import {useParams, useNavigate} from 'react-router-dom'
 import {useEffect, useState} from 'react'
+import {API_PATH} from '../config'
 import Header from '../components/Header'
 import MainContainer from '../components/MainContainer'
 import Footer from '../components/Footer'
@@ -10,7 +11,7 @@ const User = () => {
     const [user, setUser] = useState(null)
 
     const requestUserById = async (id) => {
-        const response = await fetch(`http://localhost/vitor_ambrizzi/2022-2/linguagem_de_programacao_2-LP2I3/user/by-id?id=${id}`)
+        const response = await fetch(`${API_PATH}user/by-id?id=${id}`)
         const result = await response.json()
         console.log(result?.success?.message)
         if (result?.error) {
@@ -29,10 +30,10 @@ const User = () => {
             <Header />
             <MainContainer>
                 {
-                    user?.name ?
+                    user ?
                         <>
                             <h1>{user.name}</h1>
-                            <img src={user.avatar} alt={user.name}/>
+                            <img src={user.avatar} alt={user.name} />
                             <p>Email: {user.email}</p>
                         </>
                     :
