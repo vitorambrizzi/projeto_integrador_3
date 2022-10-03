@@ -1,9 +1,8 @@
-import {TbTrash as IconTrash} from 'react-icons/tb'
+import {TbTrash as IconTrash, TbEdit as IconEdit} from 'react-icons/tb'
 import {Link} from 'react-router-dom'
 import {API_PATH} from '../config'
 
-const CardUser = ({avatarUrl, name, children, id, users, setUsers}) => {
-
+const CardUser = ({avatarUrl, name, children, id, users, setUsers, setShowModal, setUserToEdit}) => {
     const {card, avatar, box, userName, text, buttonLink} = style
 
     const deleteUser = async (id) => {
@@ -23,6 +22,16 @@ const CardUser = ({avatarUrl, name, children, id, users, setUsers}) => {
         }
     }
 
+    const handleEdit = () => {
+        setShowModal(true)
+        setUserToEdit({
+            id,
+            name,
+            email: children,
+            avatar: avatarUrl
+        })
+    }
+
     return (
         <div style={card}>
             <Link to={`/user/${id}`}>
@@ -34,6 +43,7 @@ const CardUser = ({avatarUrl, name, children, id, users, setUsers}) => {
                     <p style={text}>{children}</p>
                 </Link>
                 <IconTrash style={buttonLink} onClick={() => {deleteUser(id)}}/>
+                <IconEdit style={buttonLink} onClick={() => {handleEdit()}}/>
             </div>
         </div>
     )
@@ -78,7 +88,8 @@ const style = {
     buttonLink: {
         cursor: 'pointer',
         padding: '5px',
-        borderRadius: '5px'
+        borderRadius: '5px',
+        marginRight: '10px'
     }
 }
 
