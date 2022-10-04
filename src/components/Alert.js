@@ -1,8 +1,14 @@
+import {TiTick} from 'react-icons/ti'
+import {CgClose} from 'react-icons/cg'
 import styled from 'styled-components'
 
 const Alert = ({children, opened, type}) => {
     return (
-        <AlertBox opened={opened} type={type}>{children}</AlertBox>
+        <AlertBox opened={opened} type={type}>
+            {type === 'success' && <SuccessIcon />}
+            {type === 'error' && <ErrorIcon />}
+            {children}
+        </AlertBox>
     )
 }
 
@@ -20,6 +26,18 @@ const AlertBox = styled.div`
     border-radius: 8px;
     background-color: ${props => types[props.type]};
     margin: 15px 0;
+`
+
+const SuccessIcon = styled(TiTick)`
+    height: 15px;
+    width: 15px;
+    color: darkgreen;
+`
+
+const ErrorIcon = styled(CgClose)`
+    height: 15px;
+    width: 15px;
+    color: darkred;
 `
 
 export default Alert
