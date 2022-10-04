@@ -1,14 +1,19 @@
-import {useNavigate} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import {useState} from 'react'
 import {API_PATH} from '../config'
 import Header from '../components/Header'
 import MainContainer from '../components/MainContainer'
 import ButtonLoading from '../components/ButtonLoading'
 import Footer from '../components/Footer'
+import Alert from '../components/Alert'
 
 const SignUp = () => {
-    const navigate = useNavigate()
     const [isLoading, setIsLoading] = useState(false)
+    const [error, setError] = useState({
+        hasError: false,
+        message: 'Server error! Please try again lately!'
+    })
+    const [success, setSuccess] = useState(false)
 
     const createUser = async (user) => {
         const response = await fetch(`${API_PATH}user/sign-up`, {
@@ -17,13 +22,27 @@ const SignUp = () => {
         })
         const result = await response.json()
         if (result?.success) {
-            navigate('/')
+            setSuccess(true)
+        } else if (result?.error) {
+            if (result?.error?.message) {
+                setError({
+                    hasError: true,
+                    message: result.error.message
+                })
+            } else {
+                setError({...error, hasError: true})
+            }
         }
         setIsLoading(false)
     }
 
     const handleSubmit = (event) => {
         setIsLoading(true)
+        setSuccess(false)
+        setError({
+            hasError: false,
+            message: 'Server error! Please try again lately!'
+        })
         event.preventDefault()
         const {name, email, pass, avatar} = event.target
         createUser({
@@ -39,6 +58,9 @@ const SignUp = () => {
             <Header />
             <MainContainer>
                 <h1>Sign Up</h1>
+                <Alert opened={error.hasError} type='error'>{error.message}</Alert>
+                <Alert opened={success} type='success'>Usuário cadastrado com sucesso!</Alert>
+                {success && <Link to='/'>See list</Link>}
                 <form onSubmit={(event) => {handleSubmit(event)}}>
                     <p>Name: <input type='text' name='name'/></p>
                     <p>Email: <input type='text' name='email'/></p>
