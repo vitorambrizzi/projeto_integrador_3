@@ -1,11 +1,14 @@
 import {useNavigate} from 'react-router-dom'
+import {useState} from 'react'
 import {API_PATH} from '../config'
 import Header from '../components/Header'
 import MainContainer from '../components/MainContainer'
+import ButtonLoading from '../components/ButtonLoading'
 import Footer from '../components/Footer'
 
 const SignUp = () => {
     const navigate = useNavigate()
+    const [isLoading, setIsLoading] = useState(false)
 
     const createUser = async (user) => {
         const response = await fetch(`${API_PATH}user/sign-up`, {
@@ -16,9 +19,11 @@ const SignUp = () => {
         if (result?.success) {
             navigate('/')
         }
+        setIsLoading(false)
     }
 
     const handleSubmit = (event) => {
+        setIsLoading(true)
         event.preventDefault()
         const {name, email, pass, avatar} = event.target
         createUser({
@@ -39,7 +44,7 @@ const SignUp = () => {
                     <p>Email: <input type='text' name='email'/></p>
                     <p>Pass: <input type='password' name='pass'/></p>
                     <p>Avatar: <input type='text' name='avatar'/></p>
-                    <input type='submit' value='Send'/>
+                    <ButtonLoading type='submit' isLoading={isLoading}>Send</ButtonLoading>
                 </form>
             </MainContainer>
             <Footer />
