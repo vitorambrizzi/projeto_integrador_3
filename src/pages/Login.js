@@ -4,7 +4,7 @@ import useAuth from '../hooks/useAuth'
 
 const Login = () => {
     const [, setUserLogged] = useAuth()
-    const navigate = navigate()
+    const navigate = useNavigate()
 
     const login = async (values) => {
         const response = await fetch(`${API_PATH}auth/login`, {
