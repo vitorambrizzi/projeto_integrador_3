@@ -1,4 +1,4 @@
-import { API_PATH } from '../config'
+import {API_PATH} from '../config'
 import useAuth from '..hooks/useAuth'
 import Header from '../components/Header'
 import MainContainer from '../components/MainContainer'
