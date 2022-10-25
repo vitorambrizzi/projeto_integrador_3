@@ -1,10 +1,7 @@
 import {Link} from 'react-router-dom'
 import {useState} from 'react'
 import {API_PATH} from '../config'
-import Header from '../components/Header'
-import MainContainer from '../components/MainContainer'
 import ButtonLoading from '../components/ButtonLoading'
-import Footer from '../components/Footer'
 import Alert from '../components/Alert'
 
 const SignUp = () => {
@@ -55,21 +52,17 @@ const SignUp = () => {
 
     return (
         <>
-            <Header />
-            <MainContainer>
-                <h1>Sign Up</h1>
-                <Alert opened={error.hasError} type='error'>{error.message}</Alert>
-                <Alert opened={success} type='success'>User created successfully!</Alert>
-                {success && <Link to='/'>See list</Link>}
-                <form onSubmit={(event) => {handleSubmit(event)}}>
-                    <p>Name: <input type='text' name='name'/></p>
-                    <p>Email: <input type='text' name='email'/></p>
-                    <p>Pass: <input type='password' name='pass'/></p>
-                    <p>Avatar: <input type='text' name='avatar'/></p>
-                    <ButtonLoading type='submit' isLoading={isLoading}>Send</ButtonLoading>
-                </form>
-            </MainContainer>
-            <Footer />
+            <h1>Sign Up</h1>
+            <Alert opened={error.hasError} type='error'>{error.message}</Alert>
+            <Alert opened={success} type='success'>User created successfully!</Alert>
+            {success && <Link to='/'>See list</Link>}
+            <form onSubmit={(event) => {handleSubmit(event)}}>
+                <p>Name: <input type='text' name='name'/></p>
+                <p>Email: <input type='text' name='email'/></p>
+                <p>Pass: <input type='password' name='pass'/></p>
+                <p>Avatar: <input type='text' name='avatar'/></p>
+                <ButtonLoading type='submit' isLoading={isLoading}>Send</ButtonLoading>
+            </form>
         </>
     )
 }

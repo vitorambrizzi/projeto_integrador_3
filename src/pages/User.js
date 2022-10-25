@@ -1,9 +1,6 @@
 import {useParams, useNavigate} from 'react-router-dom'
 import {useState, useEffect} from 'react'
 import {API_PATH} from '../config'
-import Header from '../components/Header'
-import MainContainer from '../components/MainContainer'
-import Footer from '../components/Footer'
 
 const User = () => {
     const {id} = useParams()
@@ -26,19 +23,15 @@ const User = () => {
 
     return(
         <>
-            <Header />
-            <MainContainer>
-                {
-                    user ?
-                        <>
-                            <h1>{user.name}</h1>
-                            <img src={user.avatar} alt={user.name} />
-                            <p>Email: {user.email}</p>
-                        </>
-                    : <p>Loading user...</p>
-                }
-            </MainContainer>
-            <Footer />
+            {
+                user ?
+                    <>
+                        <h1>{user.name}</h1>
+                        <img src={user.avatar} alt={user.name} />
+                        <p>Email: {user.email}</p>
+                    </>
+                : <p>Loading user...</p>
+            }
         </>
     )
 }

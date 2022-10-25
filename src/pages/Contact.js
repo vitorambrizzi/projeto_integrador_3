@@ -1,25 +1,20 @@
 import {useState, useEffect} from 'react'
 import {AuthContext} from '../providers/AuthProvider'
 import {useContext} from 'react'
-import Header from '../components/Header'
-import MainContainer from '../components/MainContainer'
-import Footer from '../components/Footer'
 
 const Contact = () => {
-  // useState example
-  const [nameUser, setNameUser] = useState("Vítor")
-  const [count, setCount] = useState(0)
-  const [userLogged, setUserLogged] = useContext(AuthContext)
+    // useState example
+    const [nameUser, setNameUser] = useState("Vítor")
+    const [count, setCount] = useState(0)
+    const [userLogged, setUserLogged] = useContext(AuthContext)
 
-  // useEffect example
-  useEffect( () => {
-    console.log(count)
-  }, [count])
+    // useEffect example
+    useEffect( () => {
+        console.log(count)
+    }, [count])
 
-  return (
-    <>
-      <Header />
-      <MainContainer>
+    return (
+        <>
         <h1>Hello {nameUser}!</h1>
         <button onClick={() => setNameUser("Renan")}>Change name to Renan</button>
         <br/>
@@ -30,10 +25,8 @@ const Contact = () => {
         <h1>My number is: {count}.</h1>
         <button onClick={() => setCount(count + 1)}>Plus 1</button>
         <br/><br/>
-      </MainContainer>
-      <Footer />
-    </>
-  )
+        </>
+    )
 }
 
 export default Contact
