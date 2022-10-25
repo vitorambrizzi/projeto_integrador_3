@@ -1,5 +1,5 @@
 import {API_PATH} from '../config'
-import useAuth from '..hooks/useAuth'
+import useAuth from '../hooks/useAuth'
 import Header from '../components/Header'
 import MainContainer from '../components/MainContainer'
 import Footer from '../components/Footer'
