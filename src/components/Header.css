@@ -39,6 +39,7 @@
 
 .Header .container nav ul {
     display: flex;
+    align-items: center;
 }
 
 .Header .container nav ul li {
