@@ -59,7 +59,7 @@ const SignUp = () => {
             <MainContainer>
                 <h1>Sign Up</h1>
                 <Alert opened={error.hasError} type='error'>{error.message}</Alert>
-                <Alert opened={success} type='success'>Usuário cadastrado com sucesso!</Alert>
+                <Alert opened={success} type='success'>User created successfully!</Alert>
                 {success && <Link to='/'>See list</Link>}
                 <form onSubmit={(event) => {handleSubmit(event)}}>
                     <p>Name: <input type='text' name='name'/></p>
