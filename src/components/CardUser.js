@@ -1,16 +1,24 @@
 import {TbTrash as IconTrash, TbEdit as IconEdit} from 'react-icons/tb'
+import useAuth from '../hooks/useAuth'
 import {Link} from 'react-router-dom'
 import {API_PATH} from '../config'
 
 const CardUser = ({avatarUrl, name, children, id, users, setUsers, setShowModal, setUserToEdit}) => {
     const {card, avatar, box, userName, text, buttonLink} = style
+    const [userLogged,] = useAuth()
+    const {isLogged, idUser, token, role} = userLogged
 
     const deleteUser = async (id) => {
         //const formData = new FormData()
         //formData.append('id', id)
         const response = await fetch(`${API_PATH}user/delete`, {
             method: 'DELETE',
-            body: JSON.stringify({id: id})
+            body: JSON.stringify({id: id}),
+			headers: {
+				'Accept': 'application/json',
+				'Content-Type': 'application/json',
+				'Authorization': `${idUser} ${token}`
+			}
         })
         const result = await response.json()
 
@@ -42,8 +50,16 @@ const CardUser = ({avatarUrl, name, children, id, users, setUsers, setShowModal,
                     <h1 style={userName}>{name}</h1>
                     <p style={text}>{children}</p>
                 </Link>
-                <IconTrash style={buttonLink} onClick={() => {deleteUser(id)}}/>
-                <IconEdit style={buttonLink} onClick={() => {handleEdit()}}/>
+				{
+					isLogged && role.includes('admin') ?
+						<IconTrash style={buttonLink} onClick={() => {deleteUser(id)}}/>
+					: ''
+				}
+				{
+					isLogged && id === idUser ?
+						<IconEdit style={buttonLink} onClick={() => {handleEdit()}}/>			
+					: ''
+				}
             </div>
         </div>
     )
