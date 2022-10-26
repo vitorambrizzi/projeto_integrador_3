@@ -1,5 +1,5 @@
-import styled, {keyframes} from 'styled-components'
-import {BiLoaderAlt} from 'react-icons/bi'
+import styled from 'styled-components'
+import Loader from './Loader'
 
 const ButtonLoading = ({type = 'button', onClick, isLoading, children}) => {
     return (
@@ -28,23 +28,6 @@ const LoadingButton = styled.button`
         color: #fd8d5c;
         cursor: default;
     }
-`
-const rotate = keyframes`
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-`
-const Loader = styled(BiLoaderAlt)`
-    color: #ffffff;
-    animation: ${rotate} 0.5s linear infinite;
-    width: 24px;
-    height: 24px;
-    position: absolute;
-    left: calc(50% - 12px);
-    top: calc(50% - 12px);
 `
 
 export default ButtonLoading
