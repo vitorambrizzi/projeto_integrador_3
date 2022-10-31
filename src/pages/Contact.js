@@ -12,14 +12,22 @@ const Contact = () => {
 
     return (
         <>
-        <h1>Hello {nameUser}!</h1>
-        <button onClick={() => setNameUser("Renan")}>Change name to Renan</button>
-        <br/>
-        <button onClick={() => setNameUser("Vítor")}>Change name back to Vítor</button>
-        <br/>
-        <h1>My number is: {count}.</h1>
-        <button onClick={() => setCount(count + 1)}>Plus 1</button>
-        <br/><br/>
+            <h1>useState and useEffect example:</h1>
+            <ul>
+                <li>
+                    <h2>Hello {nameUser}!</h2>
+                    <ul>
+                        <li><button onClick={() => setNameUser("Renan")}>Change name to Renan</button></li>
+                        <li><button onClick={() => setNameUser("Vítor")}>Change name back to Vítor</button></li>
+                    </ul>
+                </li>
+                <li>
+                    <h2>My number is: {count}.</h2>
+                    <ul>
+                        <li><button onClick={() => setCount(count + 1)}>Plus 1</button></li>
+                    </ul>
+                </li>
+            </ul>
         </>
     )
 }
