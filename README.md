@@ -1,6 +1,6 @@
 # Projeto Integrador III
 Web Informatics certificate subject destined to study React and its concepts, as we develop a Front-End project view in class through the semester.
-#### Studied Technologies:
+### Studied Technologies:
 - React;
 - React Hooks;
 - Node Package Manager;
@@ -10,6 +10,6 @@ Web Informatics certificate subject destined to study React and its concepts, as
 - State Drilling; 
 - State Management with Zustand. 
 
-**Author:** Vítor Ambrizzi
-**Institution:** IFSP Câmpus Caraguatatuba
+**Author:** Vítor Ambrizzi<br>
+**Institution:** IFSP Câmpus Caraguatatuba<br>
 **Semester:** 2022-2
