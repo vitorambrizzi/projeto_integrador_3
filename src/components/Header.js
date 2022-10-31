@@ -11,7 +11,7 @@ const Header = () => {
 
 	const handleLogout = async () => {
         const result = await logout(userLogged.idUser, userLogged.token)
-        console.log(result)
+        console.log(result.success.message)
         if (result?.success) {
             localStorage.removeItem('user-auth')
             setUserLogged({
