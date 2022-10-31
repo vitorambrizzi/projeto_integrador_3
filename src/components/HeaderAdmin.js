@@ -1,4 +1,4 @@
-import {RiNeteaseCloudMusicFill as Music} from 'react-icons/ri'
+import {FaReact as React} from 'react-icons/fa'
 import {Link, NavLink, useNavigate} from 'react-router-dom'
 import useAuth from '../hooks/useAuth'
 import logout from '../helpers/logout'
@@ -29,7 +29,7 @@ const HeaderAdmin = () => {
             <div className='container'>
                 <Link to='/admin'>
                     <div className='logotype'>
-                        <Music className='icon-logo'/>
+                        <React className='icon-logo'/>
                         <h1>Admin Area</h1>
                     </div>
                 </Link>
